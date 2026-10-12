@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Înregistrare</title>
+  <link rel="icon" href="../MEDIA/tw.png">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/register_style.css">
+</head>
+
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="card-top">
+        <div class="barcode"></div>
+        <span class="cross"></span>
+      </div>
+
+      <div class="card-head">
+        <h1 class="title">Înregistrează-<span class="script">te</span></h1>
+        <div class="seal-photo brackets">
+          <span class="duo">
+            <img src="../MEDIA/tw.png" alt="Foci">
+          </span>
+        </div>
+      </div>
+
+      <form class="register-form" action="#" method="post" enctype="multipart/form-data">
+        <div class="row">
+          <label for="username">Nume utilizator</label>
+          <input type="text" id="username" name="username" placeholder="ex: ioanaTW" required>
+        </div>
+
+        <div class="row two-col">
+          <div>
+            <label for="first_name">Prenume</label>
+            <input type="text" id="first_name" name="first_name" placeholder="ex: Ioana" required>
+          </div>
+          <div>
+            <label for="last_name">Nume</label>
+            <input type="text" id="last_name" name="last_name" placeholder="ex: Popescu" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="ex: ioana@e-uvt.ro" required>
+        </div>
+
+        <div class="row two-col">
+          <div>
+            <label for="password">Parolă</label>
+            <input type="password" id="password" name="password" minlength="8" required>
+          </div>
+          <div>
+            <label for="confirm_password">Confirmă parola</label>
+            <input type="password" id="confirm_password" name="confirm_password" minlength="8" required>
+          </div>
+        </div>
+
+        <div class="row two-col">
+          <div>
+            <label for="birthdate">Data nașterii</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+          </div>
+          <div>
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" placeholder="ex: 0712345678">
+          </div>
+        </div>
+
+        <fieldset class="row">
+          <legend>Gen</legend>
+          <div class="radio-group">
+            <label class="option" for="gender_f">
+              <input type="radio" id="gender_f" name="gender" value="feminin" required> Feminin
+            </label>
+            <label class="option" for="gender_m">
+              <input type="radio" id="gender_m" name="gender" value="masculin"> Masculin
+            </label>
+            <label class="option" for="gender_o">
+              <input type="radio" id="gender_o" name="gender" value="altul"> Altul
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="row two-col">
+          <div>
+            <label for="country">Țara</label>
+            <select id="country" name="country" required>
+              <option value="">Selectează</option>
+              <option value="ro">România</option>
+              <option value="md">Republica Moldova</option>
+              <option value="it">Italia</option>
+              <option value="de">Germania</option>
+              <option value="es">Spania</option>
+              <option value="other">Alta</option>
+            </select>
+          </div>
+          <div>
+            <label for="account_type">Tip cont</label>
+            <select id="account_type" name="account_type">
+              <option value="student">Student</option>
+              <option value="profesor">Profesor</option>
+              <option value="vizitator">Vizitator</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row two-col">
+          <div>
+            <label for="study_year">Anul de studiu</label>
+            <input type="number" id="study_year" name="study_year" min="1" max="6" value="2">
+          </div>
+          <div>
+            <label for="website">Site personal / GitHub</label>
+            <input type="url" id="website" name="website" placeholder="https://github.com/...">
+          </div>
+        </div>
+
+        <fieldset class="row">
+          <legend>Interese</legend>
+          <div class="checkbox-grid">
+            <label class="option" for="int_frontend">
+              <input type="checkbox" id="int_frontend" name="interests" value="frontend"> Frontend
+            </label>
+            <label class="option" for="int_backend">
+              <input type="checkbox" id="int_backend" name="interests" value="backend"> Backend
+            </label>
+            <label class="option" for="int_uiux">
+              <input type="checkbox" id="int_uiux" name="interests" value="uiux"> UI/UX
+            </label>
+            <label class="option" for="int_js">
+              <input type="checkbox" id="int_js" name="interests" value="javascript"> JavaScript
+            </label>
+            <label class="option" for="int_python">
+              <input type="checkbox" id="int_python" name="interests" value="python"> Python Web
+            </label>
+            <label class="option" for="int_ai">
+              <input type="checkbox" id="int_ai" name="interests" value="ai"> AI
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="row two-col">
+          <div>
+            <label for="experience">Nivel experiență web (1-10)</label>
+            <input type="range" id="experience" name="experience" min="1" max="10" value="5">
+          </div>
+          <div>
+            <label for="fav_color">Culoarea preferată</label>
+            <input type="color" id="fav_color" name="fav_color" value="#4d6bff">
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="avatar">Încarcă avatar</label>
+          <input type="file" id="avatar" name="avatar" accept="image/*">
+        </div>
+
+        <div class="row">
+          <label for="description">Scurtă descriere</label>
+          <textarea id="description" name="description" rows="3" placeholder="Scrie câteva cuvinte despre tine..."></textarea>
+        </div>
+
+        <div class="row">
+          <label class="option" for="terms">
+            <input type="checkbox" id="terms" name="terms" required> Sunt de acord cu termenii și condițiile
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">Creează cont</button>
+          <button type="reset" class="btn ghost">Resetează</button>
+        </div>
+
+        <p class="login-link">Ai deja cont?
+          <a href="login.html">Mergi la login</a>
+        </p>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>

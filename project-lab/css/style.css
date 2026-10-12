@@ -1,9 +1,174 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+:root {
+  --navy: #07070f;      
+  --navy-2: #11132a;
+  --teal: #4d6bff;       
+  --teal-dark: #2c44d4;
+  --blue: #9db0ff;        
+  --peach: #ff9e7a;       
+  --ice: #e9ecff;         
+  --ice-2: #c9d1ff;
+  --text-dark: #07070f;
+  --text-light: #eef0ff;
+  --muted-light: #8f97c4;
+  --muted-dark: #555c86;
+  --font-title: 'Fraunces', Georgia, serif;
+  --font-main: 'Source Sans 3', Arial, Helvetica, sans-serif;
+  --font-mono: 'Source Sans 3', Arial, Helvetica, sans-serif; 
+  --font-script: 'Fraunces', Georgia, serif;                  
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background-color: var(--navy);
+}
+
 body {
+  position: relative;
   margin: 0;
-  padding: 0;
+  min-height: 100vh;
+  color: var(--text-light);
+  font-family: var(--font-main);
+  background-color: var(--navy);
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: var(--teal);
+  color: var(--navy);
+}
+
+
+.title {
+  font-family: var(--font-title);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.5px;
+}
+
+
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px currentColor;
+}
+
+
+.script {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--teal);
+}
+
+
+.halftone {
+  background-image: radial-gradient(circle, var(--teal) 1.6px, transparent 2px);
+  background-size: 9px 9px;
+}
+
+
+.brackets {
+  position: relative;
+  --c: var(--teal);
+  background:
+    linear-gradient(var(--c), var(--c)) top left / 18px 2px,
+    linear-gradient(var(--c), var(--c)) top left / 2px 18px,
+    linear-gradient(var(--c), var(--c)) top right / 18px 2px,
+    linear-gradient(var(--c), var(--c)) top right / 2px 18px,
+    linear-gradient(var(--c), var(--c)) bottom left / 18px 2px,
+    linear-gradient(var(--c), var(--c)) bottom left / 2px 18px,
+    linear-gradient(var(--c), var(--c)) bottom right / 18px 2px,
+    linear-gradient(var(--c), var(--c)) bottom right / 2px 18px;
+  background-repeat: no-repeat;
+}
+
+
+.barcode {
+  height: 16px;
+  width: 90px;
+  background: repeating-linear-gradient(90deg,
+      currentColor 0 2px, transparent 2px 4px,
+      currentColor 4px 5px, transparent 5px 8px,
+      currentColor 8px 11px, transparent 11px 13px);
+  opacity: 0.7;
+}
+
+
+.cross {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background:
+    linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat,
+    linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat;
+}
+
+
+.seal-photo {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 26px;
+}
+
+.seal-photo::before {
+  content: "";
+  position: absolute;
+  width: 78%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-image: radial-gradient(circle, var(--teal) 1.6px, transparent 2px);
+  background-size: 9px 9px;
+  -webkit-mask-image: radial-gradient(circle, #000 40%, transparent 70%);
+  mask-image: radial-gradient(circle, #000 40%, transparent 70%);
+}
+
+.seal-photo img {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: 36% 45%;
+  filter: grayscale(1) contrast(1.2) brightness(1.15);
+  -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent);
+  mask-image: linear-gradient(180deg, #000 80%, transparent);
+}
+
+
+.duo {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.duo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--teal-dark) 15%, var(--teal) 55%, var(--peach));
+  mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent);
+  mask-image: linear-gradient(180deg, #000 80%, transparent);
+  pointer-events: none;
 }

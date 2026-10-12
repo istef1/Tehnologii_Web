@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
+  <title>Login</title>
+  <link rel="icon" href="../MEDIA/tw.png">
   <link rel="stylesheet" href="../CSS/style.css">
   <link rel="stylesheet" href="../CSS/login_style.css">
 </head>
@@ -12,20 +13,26 @@
 <body>
   <div class="login-container">
     <div class="login-image">
-      <img src="../media/tw.png" alt="Imagine login">
+      <div class="seal-photo brackets">
+        <span class="duo">
+          <img src="../MEDIA/tw.png" alt="Imagine login cu foci">
+        </span>
+      </div>
+      <span class="cross"></span>
+      <div class="barcode"></div>
     </div>
 
     <div class="separator"></div>
 
-    <div class="login-form">
-      <h1>Login</h1>
-      <input type="email" placeholder="Email">
-      <input type="password" placeholder="Parola">
-      <button>Login</button>
+    <form class="login-form" action="home.html" method="get">
+      <h1 class="title">Log<span class="outline">in</span></h1>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Parola" required>
+      <button type="submit">Login</button>
       <p class="register-text">
-        Nu ai cont? <a href="#">Înregistrează-te</a>
+        Nu ai cont? <a href="register.html">Înregistrează-te</a>
       </p>
-    </div>
+    </form>
   </div>
 </body>
 

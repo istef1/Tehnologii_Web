@@ -1,0 +1,271 @@
+/* pagina de register: fundal de "hartie" deschisa, ca slide-urile crem */
+html {
+  background-color: var(--ice);
+}
+
+body {
+  background-color: var(--ice);
+  color: var(--text-dark);
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 16px;
+}
+
+.card {
+  max-width: 640px;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.card-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 26px;
+  color: var(--navy);
+}
+
+.card-top .cross {
+  position: relative;
+}
+
+/* titlul si poza pe acelasi rand */
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 24px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid var(--navy);
+}
+
+h1 {
+  flex: 1;
+  margin: 0;
+  font-size: 56px;
+  color: var(--navy);
+}
+
+h1 .script {
+  margin-left: 2px;
+}
+
+.card-head .seal-photo {
+  width: 200px;
+  flex-shrink: 0;
+  padding: 16px;
+  --c: var(--navy);
+}
+
+.row {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.row label,
+legend {
+  display: block;
+  margin-bottom: 6px;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted-dark);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 0;
+  border: 1.5px solid var(--navy);
+  background: #f6f7ff;
+  color: var(--text-dark);
+  font-family: var(--font-main);
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #8a90b3;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--teal-dark);
+  box-shadow: 4px 4px 0 var(--teal);
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="color"] {
+  height: 44px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  padding: 0;
+  border: none;
+  background: transparent;
+  accent-color: var(--teal-dark);
+}
+
+input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 6px 12px;
+  border: none;
+  background: var(--navy);
+  color: var(--ice);
+  font-family: var(--font-mono);
+  cursor: pointer;
+}
+
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  margin: 0 8px 0 0;
+  accent-color: var(--teal-dark);
+}
+
+.row label.option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  font-family: var(--font-main);
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.two-col {
+  display: flex;
+  gap: 12px;
+}
+
+.two-col > div {
+  flex: 1;
+}
+
+
+.radio-group,
+.checkbox-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.radio-group .option,
+.checkbox-grid .option {
+  padding: 8px 14px;
+  border: 1.5px solid var(--navy);
+  transition: background 0.2s, color 0.2s;
+}
+
+.radio-group .option:has(input:checked),
+.checkbox-grid .option:has(input:checked) {
+  background: var(--teal);
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.btn.primary {
+  background: var(--navy);
+  color: var(--ice);
+  border: 2px solid var(--navy);
+}
+
+.btn.primary:hover {
+  box-shadow: 5px 5px 0 var(--teal);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+}
+
+.btn.ghost:hover {
+  background: var(--teal);
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--muted-dark);
+}
+
+.login-link a {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--teal);
+}
+
+.login-link a:hover {
+  color: var(--teal-dark);
+}
+
+
+@media (max-width: 600px) {
+  .card-head {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .card-head .seal-photo {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  .two-col {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

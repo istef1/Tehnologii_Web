@@ -1,26 +1,58 @@
+/* pagina de loading: fundal turcoaz, ca slide-urile rosii din prezentare */
 body {
-  background: linear-gradient(90deg, #d5dfec, #1e3f66);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--teal);
+  color: var(--navy);
+  overflow: hidden;
+}
+
+
+body::after {
+  content: "";
+  position: fixed;
+  right: -60px;
+  bottom: -60px;
+  width: 420px;
+  height: 420px;
+  background-image: radial-gradient(circle, var(--navy) 2px, transparent 2.5px);
+  background-size: 10px 10px;
+  -webkit-mask-image: radial-gradient(circle at 100% 100%, #000 20%, transparent 70%);
+  mask-image: radial-gradient(circle at 100% 100%, #000 20%, transparent 70%);
+  opacity: 0.6;
 }
 
 .loading-container {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 22px;
+}
+
+.seal-photo {
+  width: 300px;
+  --c: var(--navy);
+}
+
+.seal-photo::before {
+  background-image: radial-gradient(circle, var(--navy) 1.6px, transparent 2px);
 }
 
 .logo {
-  width: 150px;
+  width: 110px;
   height: auto;
-  margin-bottom: 30px;
 }
 
 .loader {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #3498db;
+  border: 5px solid rgba(7, 7, 15, 0.2);
+  border-top: 5px solid var(--navy);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 2s linear infinite;
+  width: 46px;
+  height: 46px;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
