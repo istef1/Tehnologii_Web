@@ -1,4 +1,4 @@
-/* pagina de register: fundal de "hartie" deschisa, ca slide-urile crem */
+
 html {
   background-color: var(--ice);
 }
@@ -36,7 +36,6 @@ body {
   position: relative;
 }
 
-/* titlul si poza pe acelasi rand */
 .card-head {
   display: flex;
   align-items: center;

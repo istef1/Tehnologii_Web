@@ -1,0 +1,214 @@
+body {
+  background-color: var(--navy);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  padding: 20px 16px;
+  overflow: hidden;
+}
+
+
+body::after {
+  content: "";
+  position: fixed;
+  right: -60px;
+  bottom: -60px;
+  width: 380px;
+  height: 380px;
+  background-image: radial-gradient(circle, var(--teal) 1.8px, transparent 2.3px);
+  background-size: 9px 9px;
+  -webkit-mask-image: radial-gradient(circle at 100% 100%, #000 20%, transparent 70%);
+  mask-image: radial-gradient(circle at 100% 100%, #000 20%, transparent 70%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+
+.chat-header {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--teal);
+}
+
+.chat-header .barcode {
+  position: absolute;
+  top: -6px;
+  right: 0;
+  color: var(--muted-light);
+}
+
+.chat-header h1 {
+  margin: 0;
+  font-size: 64px;
+  color: var(--text-light);
+}
+
+.chat-header h1 .outline {
+  -webkit-text-stroke: 2px var(--teal);
+}
+
+.chat-header nav {
+  display: flex;
+  gap: 18px;
+  padding-bottom: 8px;
+}
+
+.chat-header nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.chat-header nav a:hover {
+  color: var(--teal);
+  border-color: var(--teal);
+}
+
+.chat-container {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  width: 100%;
+  height: 60vh;
+  padding: 22px;
+  background-color: var(--navy-2);
+  border-radius: 0;
+  box-shadow: 8px 8px 0 var(--teal-dark);
+  margin-bottom: 18px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.message {
+  margin-bottom: 14px;
+  max-width: 85%;
+  padding: 10px 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  animation: appear 0.25s ease-out;
+}
+
+.message strong {
+  display: block;
+  margin-bottom: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.message.bot {
+  border-left: 3px solid var(--teal);
+  background-color: rgba(77, 107, 255, 0.12);
+  color: var(--text-light);
+}
+
+.message.bot strong {
+  color: var(--blue);
+}
+
+/* mesajele utilizatorului: dreapta, fundal lila */
+.message.user {
+  margin-left: auto;
+  background-color: var(--ice);
+  color: var(--navy);
+  border-right: 3px solid var(--peach);
+}
+
+.message.user strong {
+  color: var(--teal-dark);
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- formularul ---------- */
+#chat-form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  max-width: 640px;
+  width: 100%;
+  gap: 10px;
+}
+
+#user-input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 2px;
+  border: none;
+  border-bottom: 2px solid rgba(143, 151, 196, 0.5);
+  background: transparent;
+  color: var(--text-light);
+  font-family: var(--font-main);
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+#user-input::placeholder {
+  color: var(--muted-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+#user-input:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+#chat-form button {
+  padding: 12px 26px;
+  background-color: var(--teal);
+  border: none;
+  color: var(--navy);
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+#chat-form button:hover {
+  background-color: var(--text-light);
+  box-shadow: 5px 5px 0 var(--teal-dark);
+}
+
+/* scrollbar discret */
+.chat-container::-webkit-scrollbar { width: 6px; }
+.chat-container::-webkit-scrollbar-thumb { background: var(--teal); }
+
+/* pe telefon: titlu mai mic, navigarea sub titlu */
+@media (max-width: 600px) {
+  .chat-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chat-header h1 { font-size: 48px; }
+  .chat-container { height: 55vh; padding: 14px; }
+  .message { max-width: 100%; }
+  #chat-form button { padding: 12px 16px; }
+}

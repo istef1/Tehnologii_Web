@@ -24,16 +24,18 @@
 
     <div class="separator"></div>
 
-    <form class="login-form" action="home.html" method="get">
+    <form class="login-form" id="loginForm" novalidate>
       <h1 class="title">Log<span class="outline">in</span></h1>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Parola" required>
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Parola">
       <button type="submit">Login</button>
       <p class="register-text">
         Nu ai cont? <a href="register.html">Înregistrează-te</a>
       </p>
     </form>
   </div>
+
+  <script src="../JS/login_js.js"></script>
 </body>
 
 </html>

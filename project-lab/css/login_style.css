@@ -68,7 +68,7 @@ body {
   background-color: var(--navy);
 }
 
-/* ---------- dreapta: formularul ---------- */
+
 .login-form {
   flex: 1;
   display: flex;

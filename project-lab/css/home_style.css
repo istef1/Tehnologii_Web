@@ -13,7 +13,7 @@ body {
   flex-direction: column;
 }
 
-
+/* header-ul si footer-ul nu au voie sa se micsoreze cand continutul e lung */
 header,
 footer {
   flex-shrink: 0;
@@ -27,7 +27,7 @@ main {
   padding: 20px 0;
 }
 
-
+/* ---------- header: bloc turcoaz cu titlu mare, ca slide-ul de titlu ---------- */
 header {
   position: relative;
   background-color: var(--teal);
@@ -36,7 +36,7 @@ header {
   overflow: hidden;
 }
 
-
+/* colt cu puncte halftone */
 header::after {
   content: "";
   position: absolute;
@@ -112,7 +112,7 @@ header nav a:hover {
   border-color: var(--text-light);
 }
 
-
+/* ---------- cardurile: coloane cu linie deasupra, ca in prezentare ---------- */
 .columns {
   display: flex;
   gap: 20px;
@@ -159,7 +159,7 @@ header nav a:hover {
   box-shadow: 5px 5px 0 var(--teal-dark);
 }
 
-
+/* ---------- footer ---------- */
 footer {
   border-top: 1px solid rgba(143, 151, 196, 0.25);
   text-align: center;
@@ -184,6 +184,7 @@ footer a:hover {
   border-color: var(--text-light);
 }
 
+/* Step 6: responsive */
 @media (max-width: 900px) {
   main { width: 800px; }
   .columns { justify-content: center; }
