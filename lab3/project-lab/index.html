@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 3 - CSS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="step-3">
+    <nav aria-label="Navigare principală">
+      <a class="brand" href="index.html">Web <span class="outline">Technologies</span> <span class="script">Lab 3</span></a>
+      <ul class="nav-links">
+        <li><a href="#step-2">Box Model</a></li>
+        <li><a href="#step-4">Grid</a></li>
+        <li><a href="bootstrap-gallery.html">Bootstrap 5</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Pașii laboratorului">
+      <div class="barcode"></div>
+      <ol class="steps">
+        <li><a href="#step-1">CSS selectors</a></li>
+        <li><a href="#step-2">CSS Box Model</a></li>
+        <li><a href="#step-3">Flexbox</a></li>
+        <li><a href="#step-4">CSS Grid</a></li>
+        <li><a href="#step-5">Responsive layout</a></li>
+        <li><a href="bootstrap-gallery.html">Bootstrap 5</a></li>
+      </ol>
+    </aside>
+
+    <main id="main" class="content">
+
+      <section id="step-1" class="step">
+        <h2 class="title"><span class="num">01</span> CSS selectors <span class="outline">and declarations</span></h2>
+        <p class="important">An important paragraph</p>
+      </section>
+
+      <section id="step-2" class="step">
+        <h2 class="title"><span class="num">02</span> CSS <span class="outline">Box Model</span></h2>
+        <div class="box-demo">
+          <div class="card-a">
+            <strong>content-box</strong>
+            <span class="calc">200 + 2·16 + 2·4 = 240px</span>
+          </div>
+          <div class="card-b">
+            <strong>border-box</strong>
+            <span class="calc">200px</span>
+          </div>
+        </div>
+      </section>
+      <section id="step-4" class="step">
+        <h2 class="title"><span class="num">04</span> CSS Grid: <span class="outline">six-card gallery</span></h2>
+        <div class="gallery">
+          <article class="tile"><span class="tile-art"></span><h3>Card 1</h3></article>
+          <article class="tile"><span class="tile-art"></span><h3>Card 2</h3></article>
+          <article class="tile"><span class="tile-art"></span><h3>Card 3</h3></article>
+          <article class="tile"><span class="tile-art"></span><h3>Card 4</h3></article>
+          <article class="tile"><span class="tile-art"></span><h3>Card 5</h3></article>
+          <article class="tile"><span class="tile-art"></span><h3>Card 6</h3></article>
+        </div>
+      </section>
+
+  
+      <section id="step-5" class="step">
+        <h2 class="title"><span class="num">05</span> Responsive layout: <span class="outline">sidebar + main content</span></h2>
+        <div class="layout layout-demo">
+          <aside class="demo-sidebar">Sidebar</aside>
+          <div class="demo-main">Main content</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+
+</html>
