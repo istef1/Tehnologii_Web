@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universități</title>
+  <link rel="icon" href="../MEDIA/tw.png">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/universities_style.css">
+</head>
+
+<body>
+  <header class="uni-header">
+    <div class="barcode"></div>
+    <nav>
+      <a href="home.html">Acasă</a>
+      <a href="chatbot.html">ChatBot</a>
+      <a href="login.html">Logout</a>
+    </nav>
+  </header>
+
+  <div class="uni-container">
+    <h1 class="title">Universități din <span class="outline">România</span></h1>
+
+    <div class="toolbar">
+      <div class="filter">
+        <label for="q">Filtru:</label>
+        <input id="q" placeholder="caută după nume…" />
+      </div>
+      <button id="exportBtn">Export CSV</button>
+    </div>
+
+    <div id="status" class="status"></div>
+
+    <div class="table-wrap brackets">
+      <table>
+        <thead>
+          <tr>
+            <th>Nume</th>
+            <th>Țara</th>
+            <th>Site</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="../JS/universities_js.js"></script>
+</body>
+
+</html>
