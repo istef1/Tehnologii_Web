@@ -1,0 +1,19 @@
+
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: hsl(0, 100%, 65%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+@media (hover: none) {
+  #cursor {
+    display: none;
+  }
+}
